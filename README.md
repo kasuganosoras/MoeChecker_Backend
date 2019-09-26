@@ -34,6 +34,26 @@ python3 backend.py
 
 > *名字可自定义，比如 “江苏宿迁电信”、“美国洛杉矶”*
 
+## 通过脚本一键安装 Ping + Minecraft 检测后端
+
+这个 Minecraft 检测的后端是用 PHP 写的，因为具体安装步骤比较麻烦，可以用一键脚本安装。
+
+所需环境：PHP 7 + Swoole，推荐用一键脚本安装，系统请用纯净 CentOS 7 以避免出现奇怪错误。
+
+```bash
+curl https://mcr.moe/install.sh | bash -
+```
+
+管理命令：
+
+```
+# 管理 Ping/cURL 功能服务端
+systemctl <start|stop|restart|status> backend
+# 管理 Minecraft Check 功能服务端
+systemctl <start|stop|restart|status> backend2
+```
+Minecraft 检测的后端运行在 1013 端口，请确保 1012 和 1013 端口都开放才能正常工作。
+
 ## 开源协议
 
 本项目使用 GPL v3 协议开源
